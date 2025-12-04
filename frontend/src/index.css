@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@font-face {
+   font-family: heading;
+   src: url(../public/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+}
+
+@font-face {
+   font-family: simple;
+   src: url(../public/fonts/Montserrat-VariableFont_wght.ttf);
+}

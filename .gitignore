@@ -1,0 +1,32 @@
+# Ignore node_modules inside frontend
+/frontend/node_modules
+
+# Ignore build output
+/frontend/dist
+/frontend/build
+
+# Ignore environment files
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+# Logs
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/frontend/pnpm-debug.log*
+
+# Editor / OS files
+/frontend/.vscode/
+/frontend/.idea/
+/frontend/*.suo
+/frontend/*.ntvs*
+/frontend/*.njsproj
+/frontend/*.sln
+/frontend/.DS_Store
+/frontend/Thumbs.db
+
+# Coverage / misc
+/frontend/coverage/
