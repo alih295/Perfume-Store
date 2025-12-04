@@ -35,7 +35,7 @@ const searchItems=(value)=>{
       >
         <img
           className="w-15 rounded-full"
-          src="../public/images/logo.png"
+          src="/images/logo.png"
           alt=""
         />
         <h1>MB FRAGRENCE</h1>
