@@ -22,7 +22,7 @@ function CartSummary({ item }) {
          <div onClick={()=> {removeItems(item.id)}}  className='text-lg absolute right-5 cursor-pointer top-10'>
             <GiCrossedBones />
          </div>
-         <img className=' w-60 object-cover rounded-lg h-full ' src="../../public/scentsimg/1.jpeg" alt="" />
+         <img className=' w-60 object-cover rounded-lg h-full ' src={item.src} alt="" />
          <div className='w-[60%] gap-2 flex flex-col'>
             <h1 className='text-2xl font-semibold'>{item.title}</h1>
             <p className='text-md text-gray-800'>{item.description}</p>
