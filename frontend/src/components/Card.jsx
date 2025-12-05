@@ -12,7 +12,7 @@ function Card() {
           return (
             <div
               key={idx}
-              className="w-60 hover:bg-black hover:text-white transition-all duration-500 font-[simple] min-h-100 relative shadow-xl shadow-black/50 overflow-hidden rounded-lg "
+              className="w-60 hover:scale-x-120 transition-all duration-500 font-[simple] min-h-100 relative shadow-xl shadow-black/50 overflow-hidden rounded-lg "
             >
               <img
                 className="w-full  h-60 object-cover"
@@ -20,7 +20,7 @@ function Card() {
                 alt=""
               />
               <div className="w-full flex gap-2 flex-col p-5">
-                <h3 className="text-lg leading-[20px] font-semibold  ">
+                <h3 className="text-lg font-[heading] leading-[20px] font-semibold  ">
                   {item.title}
                 </h3>
                 <h6 className="text-sm text-gray-600">{item.description}</h6>

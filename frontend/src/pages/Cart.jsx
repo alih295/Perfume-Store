@@ -3,6 +3,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import CartSummary from "../components/CartSummary";
 import { ProductContext } from "../Context/Context";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const { cartProducts } = useContext(ProductContext);
@@ -39,13 +40,13 @@ function Cart() {
               <p> {totalPrice}</p>
             </div>
 
-            <button
-              className={`w-full cursor-pointer ${
+            <Link to={'/checkout'}
+              className={`w-full text-center cursor-pointer ${
                 cartProducts.length > 0 ? "block" : "hidden"
-              }  text-lg font-semibold py-2 rounded-full bg-[#ECB651]`}
+              }  text-lg font-semibold py-2 font-[heading] rounded-full bg-[#ECB651]`}
             >
               {cartProducts.length > 0 ? "Checkout" : "No Items Selected"}
-            </button>
+            </Link>
           </div>
         </div>
       <Footer />
