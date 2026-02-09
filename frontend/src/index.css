@@ -9,3 +9,17 @@
    font-family: simple;
    src: url(../public/fonts/Montserrat-VariableFont_wght.ttf);
 }
+
+*{
+   font-family: simple;
+}
+
+
+
+@theme{
+   --secondary: #212121;
+  --elem: #F2CC0F;
+  --bg: #FBF5DF;
+}
+
+

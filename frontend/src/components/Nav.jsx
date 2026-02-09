@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { TbShoppingCartCog } from "react-icons/tb";
 import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../Context/Context";
 
 function Nav() {
@@ -25,13 +25,13 @@ const searchItems=(value)=>{
   setSearchResult(filtered);
  
 }
-
+const navigate = useNavigate()
 
   return (
-    <div className="w-full text-white h-20 flex justify-between items-center bg-black px-5 py-2 ">
+    <div className="w-full text-white h-20 flex justify-between items-center bg-[#212121] px-5 py-2 ">
       <Link
         to={"/"}
-        className="flex items-center text-lg text-[#D4AA5E] justify-center font-[heading]"
+        className="flex items-center text-lg text-[#F2CC0F] justify-center font-[heading]"
       >
         <img
           className="w-15 rounded-full"
@@ -51,20 +51,27 @@ const searchItems=(value)=>{
         <span className="text-xl cursor-pointer text-black font-bold ">
           <FaSearch />
         </span>
-        <div className={`w-full h-100 ${searchedItem ?'block' :'hidden'} p-5  absolute top-15 rounded-lg backdrop-blur-lg  text-xl font-[simple]` }> {searchResult.map((item , idx)=>{
-            return (<Link to={`/searchresult/${item.id}`} key={idx} className="cursor-pointer block mb-4 border-b"> {item.title} </Link>)
+        <div className={`w-full h-100 ${searchedItem ?'block' :'hidden'} p-5  absolute top-15 rounded-lg backdrop-blur-lg bg-[#212121]  text-xl font-[simple]` }> {searchResult.map((item , idx)=>{
+          
+            return (<Link to={`/searchresult/${item._id}`} key={idx} className="cursor-pointer block pb-2 mb-4 border-b border-[#F2CC0F]"> {item.title} </Link>)
         })} </div>
       </div>
+          <button
+    onClick={() => navigate("/track-order")}
+    className="border px-4 py-2 text-md rounded-full hover:bg-[#F2CC0F] hover:text-[#212121] transition-all duration-150"
+  >
+    Track Order
+  </button>
 
       <div className="flex gap-8">
-        <span className="text-2xl cursor-pointer flex justify-center items-center gap-2  font-bold">
+        <Link to={'/signup'} className="text-2xl hover:text-[#F2CC0F] cursor-pointer flex justify-center items-center gap-2  font-bold">
           <CgProfile /> <p className="font-light text-lg">Account</p>
-        </span>
+        </Link>
         <Link
           to={"/cart"}
-          className="text-2xl relative cursor-pointer  flex justify-center items-center gap-2 font-bold"
+          className="text-2xl hover:text-[#F2CC0F] relative cursor-pointer  flex justify-center items-center gap-2 font-bold"
         >
-          <span className={`w-5 absolute ${cartItems > 0 ? 'block' : 'hidden'} h-5 rounded-full -top-2 left-0 text-white text-sm flex items-center justify-center bg-red-600`}>
+          <span className={`w-5 absolute ${cartItems > 0 ? 'block' : 'hidden'} h-5 rounded-full -top-2 left-0 text-[#212121] text-sm flex items-center justify-center bg-[#F2CC0F]`}>
             {cartItems}
           </span>
           <TbShoppingCartCog />
