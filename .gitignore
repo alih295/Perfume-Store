@@ -30,3 +30,5 @@
 
 # Coverage / misc
 /frontend/coverage/
+ .ev 
+ node_modules/
