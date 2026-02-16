@@ -4,7 +4,7 @@ import { FaInstagram } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 function Footer() {
   return (
-      <div className='w-full lg:h-100 mt-10  bg-(--secondary) text-white  '>
+      <div className='w-full lg:h-100 mt-10  bg-black/95 text-white  '>
          <div className='w-full px-10 h-[80%] flex lg:flex-row flex-col lg:items-center lg:justify-evenly gap-10  border-b   border-(--white)  '>
             <div className='lg:w-[22%] w-full flex flex-col  items-center
        gap-5 justify-center   h-full'>
