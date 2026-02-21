@@ -1,3 +1,6 @@
+ node_modules/
+
+
 # Ignore node_modules inside frontend
 /frontend/node_modules
 
@@ -29,6 +32,8 @@
 /frontend/Thumbs.db
 
 # Coverage / misc
-/frontend/coverage/
- .ev 
- node_modules/
+/frontend/coverage/ 
+
+
+
+ .env
