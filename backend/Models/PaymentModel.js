@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const PaymentSchema = new mongoose.Schema(
   {
-    orderId: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Order",
+      ref: "user",
       required: true,
     },
-
+order: { type: mongoose.Schema.Types.ObjectId, ref: 'Order' } , 
     paymentMethod: {
       type: String,
       enum: ["jazzcash", "easypaisa", "bank"],
@@ -16,7 +16,6 @@ const PaymentSchema = new mongoose.Schema(
 
     transactionId: {
       type: String,
-      required: true,
     },
 
     senderNumber: {
@@ -24,18 +23,18 @@ const PaymentSchema = new mongoose.Schema(
       required: true,
     },
 
-    screenshot: {
+    image: {
       type: String,
       required: true,
     },
 
     paymentStatus: {
       type: String,
-      enum: ["pending", "verified", "rejected"],
-      default: "pending",
+      enum: ["under-review", "verified", "rejected"],
+      default: "under-review",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Payment", PaymentSchema);

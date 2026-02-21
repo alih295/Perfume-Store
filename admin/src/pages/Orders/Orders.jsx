@@ -11,8 +11,9 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/order" ,{withCredentials:true});
-        setOrders(res.data.ress);
+        const res = await axios.get("http://localhost:3000/api/order/order" ,{withCredentials:true});
+        console.log(res.data)
+        setOrders(res.data.order);
       } catch (err) {
         console.log(err);
       }

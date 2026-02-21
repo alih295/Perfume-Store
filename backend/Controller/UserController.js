@@ -33,7 +33,7 @@ const UserLogin = async (req, res) => {
 
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {
-    res.json("invalid credentials");
+    res.json("invalid password");
   }
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
   res.cookie("token", token);

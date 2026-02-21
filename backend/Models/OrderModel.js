@@ -2,12 +2,11 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema(
   {
-    publicOrderId: {
-  type: String,
-  unique: true,
-  required: true,
-},
-
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "user",
+    },
     orderStatus: {
       type: String,
       enum: ["pending", "confirmed", "shipped", "delivered", "cancelled"],
@@ -18,31 +17,24 @@ const orderSchema = new mongoose.Schema(
       enum: ["pending", "accepted", "failed"],
       default: "pending",
     },
-    customerName: {
-      type: String,
-      required: true,
-    },
-    addressId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Address",
-      required: true,
-    },
-
     items: [
       {
-        productId: mongoose.Schema.Types.ObjectId, // agar DB product hai
-        title: String,
-        imgSrc: String,
-        price: Number,
-        qty: Number,
+        product: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "product",
+          required: true,
+        },
+        price: {
+          type: Number,
+          required: true,
+        },
       },
     ],
 
     subTotal: Number,
-    shipping: Number,
     total: Number,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Order", orderSchema);

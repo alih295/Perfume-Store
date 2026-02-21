@@ -54,10 +54,10 @@ function PaymentVerification() {
 
 console.log(orderDets)
   return (
-    <div className='w-full relative text-(--secondary) bg-(--bg) min-h-screen flex font-[simple] flex-col'>
+    <div className='w-full relative text-black/95 bg-gray-100 min-h-screen flex font-[simple] flex-col'>
       <Nav />
 
-      <div className='w-[80vw]  p-10 flex gap-5 h-50  border rounded-lg mt-5 mx-auto border-(--elem)'>
+      <div className='w-[80vw]  p-10 flex gap-5 h-50  border rounded-lg mt-5 mx-auto border-yellow-500'>
 
         <div className='w-1/2 h-full flex flex-col gap-4'>
           <p>Status: Payment Pending
@@ -105,12 +105,12 @@ console.log(orderDets)
             value={senderNumber} onChange={(e) => {
               setsenderNumber(e.target.value)
             }}
-            className='w-full px-4 py-2 outline-none border-b shadow shadow-black/30 rounded-lg ' type="Number" placeholder='Enter Your Number Here' />
+            className='w-full px-4 py-2 outline-none border rounded-lg ' type="Number" placeholder='Enter Your Number Here' />
           <input
             value={transactionId} onChange={(e) => {
               setTransactionId(e.target.value)
             }}
-            className='w-full px-4 py-2 outline-none border-b shadow shadow-black/30 rounded-lg ' type="Number" placeholder='Enter Transaction Id' />
+            className='w-full px-4 py-2 outline-none border rounded-lg ' type="Number" placeholder='Enter Transaction Id' />
 
           <div className='w-full h-20 border cursor-pointer relative border-dashed items-center justify-center flex rounded-lg'>
             <p className='text-lg capitalize text-gray-400'>Upload Screenshot Of your Payment</p>
@@ -120,7 +120,7 @@ console.log(orderDets)
               }}
               className='w-full h-full absolute opacity-0 cursor-pointer' type="file" />
           </div>
-          <button className='w-full py-2 bg-(--secondary) hover:bg-(--elem) hover:text-(--secondary) text-(--elem) rounded-full transition-all duration-200 text-lg cursor-pointer'> Confirm </button>
+          <button className='w-full py-2 bg-black/95 hover:bg-yellow-500 hover:text-black/95 text-yellow-500 rounded-full transition-all duration-200 text-lg cursor-pointer'> Confirm </button>
         </form>
 
       </div>

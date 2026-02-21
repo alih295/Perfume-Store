@@ -12,7 +12,7 @@ function SearchedItems() {
    useEffect(() => {
       const remainingitem = product.filter((item) =>  { return item._id === id} 
       )
-      console.log(remainingitem)
+
       setResult(remainingitem)
 
    }, [id, product])
