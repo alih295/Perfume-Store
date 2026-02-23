@@ -6,7 +6,7 @@ import Card from "../components/Card";
 
 function Home() {
   return (
-    <div className="w-full  font-[simple] relative">
+    <div className="w-full bg-gray-200  font-[simple] relative">
       <Nav />
       <Herosection />
       <Card />

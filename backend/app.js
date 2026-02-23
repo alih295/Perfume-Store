@@ -1,8 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+const dns = require('dns')
+dns.setServers(['1.1.1.1' , '8.8.8.8'])
 const app = express();
 require('dotenv').config()
 const cookieParser = require("cookie-parser");
+const conectDb =require('./db/db')
+conectDb()
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -12,8 +16,7 @@ app.use(
   }),
 );
 app.use(express.urlencoded({ extended: true }));
-const ConnectDb = require("./db/db");
-ConnectDb();
+
 
 const productRoutes = require("./Routes/ProductRoutes");
 const OrderRoutes = require("./Routes/OrderRoutes");
@@ -24,9 +27,8 @@ const paymentRoutes = require('./Routes/payment.route')
 
 
 const cartRouter = require("./Routes/cartRouter");
-const addressroutes = require('./Routes/address.route')
-// app.use("/uploads", express.static("uploads"));
-// app.use("/Payment", express.static("Payment"));
+const addressroutes = require('./Routes/address.route');
+const ConnectDb = require("./db/db");
 
 app.use("/api", AdminLoginRoutes);
 app.use("/api", productRoutes);

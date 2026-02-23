@@ -26,10 +26,11 @@ const UserRegister = async (req, res) => {
 };
 const UserLogin = async (req, res) => {
   const { email, password } = req.body;
-  const user = await userModel.findOne({ email });
+  const user = await userModel.findOne({ email }).select("+password");
   if (!user) {
     res.json("invalid credentials");
   }
+
 
   const isMatch = await bcrypt.compare(password, user.password);
   if (!isMatch) {

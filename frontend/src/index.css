@@ -12,14 +12,13 @@
 
 *{
    font-family: simple;
+  
+   box-sizing: border-box;
 }
 
-
-
-@theme{
-   --secondary: #212121;
-  --elem: #F2CC0F;
-  --bg: #FBF5DF;
+body{
+   display: grid;
+   grid-template-columns: auto 1fr auto;
 }
 
 

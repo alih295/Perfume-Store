@@ -12,6 +12,7 @@ function Context({ children }) {
    fetchProduct()
   }, [])
   
+  const [isLogin,setIsLogin] = useState(false)
 
   const [cartProducts, setCartProducts] = useState([]);
   useEffect(() => {
@@ -23,7 +24,7 @@ function Context({ children }) {
   return (
     <>
       <ProductContext.Provider
-        value={{product , cartProducts, setCartProducts }}
+        value={{product , cartProducts, setCartProducts , isLogin,setIsLogin}}
       >
         {children}
       </ProductContext.Provider>

@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
 import {motion} from 'motion/react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { ProductContext } from './Context/Context'
 
 function ProtectedRoutes({children}) {
    const Navigate = useNavigate()
 
-
+   const {isLogin,setIsLogin} = useContext(ProductContext)
 
 const handleLogin = ()=>{
    Navigate('/login')
 }
 
-   const [login, setLogin] = useState(false)
+  
 
 
 
-if(!login){
+if(!isLogin){
    return  <div className='w-full gap-5 h-screen flex items-center justify-center flex-col bg-gray-300'> <h1 className='text-xl text'>Please login</h1> 
       <motion.button  whileHover={{scale:1.06 , boxShadow:'2px 2px 10px rgba(0,0,0,0.7)'}} 
       whileTap={{scale:0.9 , opacity:0.7}}

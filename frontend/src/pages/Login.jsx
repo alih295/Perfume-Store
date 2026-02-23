@@ -13,7 +13,7 @@ function Login() {
                <input required className='w-full py-2 outline-none text-lg border rounded-lg px-4' type="email" placeholder='Email' />
                <input required className='w-full py-2 outline-none text-lg border rounded-lg px-4' type="password" placeholder='Password' />
                <p>Don't Have an Account | <Link to={'/signup'} className='text-(--yellow) cursor-pointer '>Sign up</Link>  </p>
-               <input className='w-full text-(--bg) text-lg font-semibold cursor-pointer hover:scale-105 transition-all duration-150 py-2 rounded-full bg-(--yellow)' value={"Login"} type="submit" />
+               <input className='w-full text-white text-lg font-semibold cursor-pointer hover:scale-105 hover:bg-yellow-500 hover:text-black transition-all bg-black/95 duration-150 py-2 rounded-full ' value={"Login"} type="submit" />
             </form>
 
          </div>

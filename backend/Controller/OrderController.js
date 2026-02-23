@@ -2,7 +2,10 @@ const cartModel = require("../Models/CartModel");
 const orderModel = require("../Models/OrderModel");
 
 const getOrder = async (req, res) => {
-  const order = await orderModel.find().populate("user" , "fullName" );
+  const userId = req.user._id
+
+
+  const order = await orderModel.findOne({user:userId}).populate("user" , "fullName" );
   res.json({
     message: "order is ",
     order,

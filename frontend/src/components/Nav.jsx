@@ -32,16 +32,16 @@ const searchItems=(value)=>{
     <div className="w-full text-white h-20 z-99 relative flex justify-between items-center bg-black/95 px-5 py-2 ">
       <Link
         to={"/"}
-        className="flex h-20 relative p-2  w-50 items-center text-lg  text-yellow-500 justify-center font-[heading]"
+        className="flex lg:h-10 relative p-2  w-20 lg:w-50 items-center text-lg  text-yellow-500 justify-center font-[heading]"
       >
         <img
           className="h-full"
           src="/images/logo.png"
           alt=""
         />
-        <h1>FRAGRENCE</h1>
+        <h1 className="lg:block hidden">FRAGRENCE</h1>
       </Link>
-      <div className="w-80 relative bg-white flex justify-between pr-2 items-center   rounded-full h-10">
+      <div className="w-80 relative bg-white lg:flex hidden justify-between pr-2 items-center   rounded-full h-10">
         <input  value={searchedItem} onChange={(e)=>{
            searchItems(e.target.value)
         }}    
@@ -59,8 +59,8 @@ const searchItems=(value)=>{
       </div>
    
 
-      <div className="flex gap-8">
-        <Link to={'/signup'} className="text-2xl hover:text-yellow-500 cursor-pointer flex justify-center items-center gap-2  font-bold">
+      <div className="flex gap-4 md:gap-8">
+        <Link to={'/profile'} className="text-2xl hover:text-yellow-500 cursor-pointer flex justify-center items-center gap-2  font-bold">
           <CgProfile /> <p className="font-light text-lg">Account</p>
         </Link>
         <Link
