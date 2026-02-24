@@ -9,7 +9,7 @@ async function uploadImage(file){
 const result = client.files.upload({
    file,
     fileName: `payment ${Date.now()}`,
-    folder: "basitsstore/paymentimg",
+    folder: "basitsstore",
 })
 
 return result

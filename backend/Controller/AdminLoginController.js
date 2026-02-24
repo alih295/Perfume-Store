@@ -7,7 +7,6 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
    const {email , password } = req.body
-   console.log(email,password)
      if (email !== ADMIN_EMAIL) {
     return res.status(401).json({ message: "Invalid email" });
   }

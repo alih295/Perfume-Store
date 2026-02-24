@@ -1,25 +1,16 @@
-const {
-  getProduct,
-  addProduct,
-  deleteProduct,
-  updateProduct,
-  addToCart,
-} = require("../Controller/productController");
-const ProductModel = require("../Models/ProductModel");
 const express = require("express");
+const {getProduct, deleteProduct , addProduct , updateProduct} = require("../Controller/productController")
+
+const multer = require("multer");
+
+const upload = multer({ storage: multer.memoryStorage() });
 const router = express.Router();
 const adminAuth = require("../Middlewares/AdminMiddalware");
 const UserAuth = require("../Middlewares/UserAuth");
 
 router.get("/product", getProduct);
 router.delete("/delete", adminAuth, deleteProduct);
-// router.post("/addproduct", upload.single("image"), adminAuth, addProduct);
-// router.put(
-//   "/updateproduct/:id",
-//   upload.single("image"),
-//   adminAuth,
-//   updateProduct,
-// );
-router.post("/addtoCart", UserAuth, addToCart);
+router.patch('/update-product/:id' , updateProduct)
+router.post("/add-product", adminAuth, upload.single("image"), addProduct);
 
 module.exports = router;
